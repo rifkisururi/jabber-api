@@ -1,3 +1,4 @@
+require('dotenv').config()
 var xmpp = require('simple-xmpp');
 var http = require('http');
 var url = require('url');
@@ -29,13 +30,13 @@ http.createServer(function (req, res) {
         var txt = "terjadi kesalahan";
     }
     res.end(JSON.stringify({ status: status }));
-}).listen(443);
+}).listen(parseInt(process.env.RUNNING_PORT));
 
 xmpp.connect({
-    jid: 'sangjuara@jabbim.com',
-    password: 'Ahmad2709',
-    host: 'jabbim.com',
-    port: 5222
+    jid: process.env.JID,
+    password: process.env.PASSWORD,
+    host: process.env.HOST,
+    port: parseInt(process.env.PORT)
 });
 
 xmpp.on('online', function (data) {
