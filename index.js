@@ -29,7 +29,7 @@ http.createServer(function (req, res) {
         var txt = "terjadi kesalahan";
     }
     res.end(JSON.stringify({ status: status }));
-}).listen(8080);
+}).listen(443);
 
 xmpp.connect({
     jid: 'sangjuara@jabbim.com',
