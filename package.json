@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "md5": "^2.3.0",
+    "simple-xmpp": "^2.3.1"
+  }
+}
